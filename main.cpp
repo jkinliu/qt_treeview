@@ -1,6 +1,10 @@
 #include "widget.h"
 #include <QApplication>
 
+#include <QFile>
+#include <QTreeView>
+#include "treemodel.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

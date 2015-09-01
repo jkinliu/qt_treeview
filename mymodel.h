@@ -6,7 +6,7 @@
 class mymodel : public QAbstractItemModel
 {
 public:
-    mymodel();
+    mymodel(QObject *parent = 0);
 
     QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QModelIndex parent(const QModelIndex &index) const Q_DECL_OVERRIDE;

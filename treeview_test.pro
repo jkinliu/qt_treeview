@@ -14,9 +14,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         widget.cpp \
-    mymodel.cpp
+    mymodel.cpp \
+    treeitem.cpp \
+    treemodel.cpp
 
 HEADERS  += widget.h \
-    mymodel.h
+    mymodel.h \
+    treeitem.h \
+    treemodel.h
 
 FORMS    += widget.ui
+
+DISTFILES +=
+
+RESOURCES += \
+    test.qrc

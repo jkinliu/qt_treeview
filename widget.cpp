@@ -1,14 +1,25 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include "mymodel.h"
+#include "treemodel.h"
+#include <QFile>
+#include <QDirModel>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    mymodel mm;
-    ui->treeView->setModel(&mm);
+
+    mymodel* mm = new mymodel();
+    ui->treeView->setModel(mm);
+    /*
+    QFile file(":/Resources/default.txt");
+    file.open(QIODevice::ReadOnly);
+    TreeModel* model = new TreeModel(file.readAll());
+    file.close();
+    ui->treeView->setModel(model);
+    */
 }
 
 Widget::~Widget()
