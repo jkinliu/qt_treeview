@@ -2,6 +2,7 @@
 #include "ui_widget.h"
 #include "mymodel.h"
 #include "treemodel.h"
+#include "delegate.h"
 #include <QFile>
 #include <QDirModel>
 
@@ -13,6 +14,8 @@ Widget::Widget(QWidget *parent) :
 
     mymodel* mm = new mymodel();
     ui->treeView->setModel(mm);
+    SpinBoxDelegate* sd = new SpinBoxDelegate();
+    ui->treeView->setItemDelegate(sd);
     /*
     QFile file(":/Resources/default.txt");
     file.open(QIODevice::ReadOnly);

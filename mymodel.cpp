@@ -1,4 +1,5 @@
 #include "mymodel.h"
+#include <QColor>
 
 mymodel::mymodel(QObject *parent) : QAbstractItemModel(parent)
 {
@@ -24,11 +25,20 @@ int mymodel::rowCount(const QModelIndex &parent) const
 
 int mymodel::columnCount(const QModelIndex &parent) const
 {
-    return 2;
+    return 3;
 }
 
 QVariant mymodel::data(const QModelIndex &index, int role) const
 {
+
+    if (role == Qt::TextColorRole) return QColor(255,0,0);
     if (role != Qt::DisplayRole) return QVariant();
-    return QVariant(10);
+    return QVariant(index.column() * 10 + index.row());
+}
+Qt::ItemFlags mymodel::flags(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return 0;
+
+    return Qt::ItemIsEditable | QAbstractItemModel::flags(index);
 }

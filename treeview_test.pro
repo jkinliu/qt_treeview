@@ -16,12 +16,14 @@ SOURCES += main.cpp\
         widget.cpp \
     mymodel.cpp \
     treeitem.cpp \
-    treemodel.cpp
+    treemodel.cpp \
+    delegate.cpp
 
 HEADERS  += widget.h \
     mymodel.h \
     treeitem.h \
-    treemodel.h
+    treemodel.h \
+    delegate.h
 
 FORMS    += widget.ui
 
